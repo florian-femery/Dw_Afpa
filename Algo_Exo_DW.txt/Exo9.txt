@@ -1,0 +1,225 @@
+﻿/************************************************************************************************************
+                                                Exo9.1
+************************************************************************************************************/
+A ← Sin(B)            Aucun problème
+A ← Sin(A + B * C)    Aucun problème
+B ← Sin(A) – Sin(D)   Erreur ! D est en caractère
+C ← Sin(A / B)        Aucun problème… si B est différent de zéro
+C ← Cos(Sin(A)        Erreur ! Il manque une parenthèse fermante
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.2
+************************************************************************************************************/
+Variable Mot en Caractère
+Variable Nb en Entier
+Debut
+Ecrire "Entrez un mot : "
+Lire Mot
+Nb ← Len(Mot)
+Ecrire "Ce mot compte ", Nb, " lettres"
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.3
+************************************************************************************************************/
+Variable Bla en Caractère
+Variables Nb, i en Entier
+Debut
+Ecrire "Entrez une phrase : "
+Lire Bla
+Nb ← 0
+Pour i ← 1 à Len(Bla)
+  Si Mid(Bla, i , 1) = " " Alors
+    Nb ← Nb + 1
+  FinSi
+i suivant
+Ecrire "Cette phrase compte ", Nb + 1, " mots"
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.4
+************************************************************************************************************/
+Variable Bla en Caractère
+Variables Nb, i, j en Entier
+Debut
+Ecrire "Entrez une phrase : "
+Lire Bla
+Nb ← 0
+Pour i ← 1 à Len(Bla)
+  Si Mid(Bla, i, 1) = "a" ou Mid(Bla, i, 1) = "e" ou Mid(Bla, i, 1) = "i" ou Mid(Bla, i, 1) = "o" ou Mid(Bla, i, 1) = "u" ou Mid(Bla, i, 1) = "y" Alors
+    Nb ← Nb + 1
+  FinSi
+i suivant
+Ecrire "Cette phrase compte ", Nb, " voyelles"
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.5
+************************************************************************************************************/
+Variable Bla en Caractère
+Variables Nb, i, j en Entier
+Début
+Ecrire "Entrez une phrase : "
+Lire Bla
+Ecrire "Entrez le rang du caractère à supprimer : "
+Lire Nb
+L ← Len(Bla)
+Bla ← Mid(Bla, 1, Nb – 1) & Mid(Bla, Nb + 1, L – Nb)
+Ecrire "La nouvelle phrase est : ", Bla
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.6
+************************************************************************************************************/
+Variables Bla, Cod, Alpha en Caractère
+Variables i, Pos en Entier
+Début
+Ecrire "Entrez la phrase à coder : "
+Lire Bla
+Alpha ← "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+Cod ← ""
+Pour i ← 1 à Len(Bla)
+  Let ← Mid(Bla, i, 1)
+  Si Let <> "Z" Alors
+    Pos ← Trouve(Alpha, Let)
+    Cod ← Cod & Mid(Alpha, Pos + 1, 1)
+  Sinon
+    Cod ← Cod & "A"
+  FinSi
+i Suivant
+Bla ← Cod
+Ecrire "La phrase codée est : ", Bla
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.7
+************************************************************************************************************/
+Variable Bla, Cod, Alpha en Caractère
+Variables i, Pos, Décal en Entier
+Début
+Ecrire "Entrez le décalage à appliquer : "
+Lire Décal
+Ecrire "Entrez la phrase à coder : "
+Lire Bla
+Alpha ← "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+Cod ← ""
+Pour i ← 1 à Len(Bla)
+  Let ← Mid(Bla, i, 1)
+  Pos ← Trouve(Alpha, Let)
+  NouvPos ← Mod(Pos + Décal, 26)
+  Si NouvPos = 0 Alors
+    NouvPos ← 26
+  FinSi
+  Cod ← Cod & Mid(Alpha, NouvPos, 1)
+i Suivant
+Bla ← Cod
+Ecrire "La phrase codée est : ", Bla
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.8
+************************************************************************************************************/
+Variable Bla, Cod, Alpha en Caractère
+Variables i, Pos, Décal en Entier
+Début
+Ecrire "Entrez l’alphabet clé : "
+Lire Clé
+Ecrire "Entrez la phrase à coder : "
+Lire Bla
+Alpha ← "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+Cod ← ""
+Pour i ← 1 à Len(Bla)
+  Let ← Mid(Bla, i, 1)
+  Pos ← Trouve(Alpha, Let)
+  Cod ← Cod & Mid(Clé, Pos, 1)
+i Suivant
+Bla ← Cod
+Ecrire "La phrase codée est : ", Bla
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.9
+************************************************************************************************************/
+Variables Alpha, Bla, Cod, Clé, Let en Caractère
+Variables i, Pos, PosClé, Décal en Entier
+Début
+Ecrire "Entrez la clé : "
+Lire Clé
+Ecrire "Entrez la phrase à coder : "
+Lire Bla
+Alpha ← "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+Cod ← ""
+PosClé ← 0
+Pour i ← 1 à Len(Bla)
+  Posclé ← Posclé + 1
+  Si PosClé > Len(Clé) Alors
+    PosClé ← 1
+  FinSi
+  LetClé ← Mid(Clé, PosClé, 1)
+  PosLetClé ← Trouve(Alpha, LetClé)
+  Let ← Mid(Bla, i, 1)
+  Pos ← Trouve(Alpha, Let)
+  NouvPos ← Pos + PosLetClé - 1
+  Si NouvPos > 26 Alors
+    NouvPos ← NouvPos – 26
+  FinSi
+  Cod ← Cod & Mid(Alpha, NouvPos, 1)
+i Suivant
+Bla ← Cod
+Ecrire "La phrase codée est : ", Bla
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.10
+************************************************************************************************************/
+Variable Nb en Entier
+Ecrire "Entrez votre nombre : "
+Lire Nb
+Si Nb/2 = Ent(Nb/2) Alors
+  Ecrire "Ce nombre est pair"
+Sinon
+  Ecrire "Ce nombre est impair"
+FinSi
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo9.11
+************************************************************************************************************/
+a) Glup ← Alea() * 2
+b) Glup ← Alea() * 2 - 1
+c) Glup ← Alea() * 0,30 + 1,35
+d) Glup ← Ent(Alea() * 6) + 1
+e) Glup ← Alea() * 17 – 10,5
+f) Glup ← Ent(Alea()*6) + Ent(Alea()*6) + 2
+
+/***********************************************************************************************************/

@@ -1,0 +1,252 @@
+﻿/************************************************************************************************************
+                                                Exo11.1
+************************************************************************************************************/
+Fonction Sum(a, b, c, d, e) en Numérique
+  Renvoyer a + b + c + d + e
+FinFonction
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.2
+************************************************************************************************************/
+Fonction NbVoyelles(Mot en Caractère) en Numérique
+Variables i, nb en Numérique
+nb ← 0
+Pour i ← 1 à Len(Mot)
+  Si Trouve("aeiouy", Mid(Mot, i, 1)) <> 0 Alors
+    nb ← nb + 1
+  FinSi
+i suivant
+Renvoyer nb
+FinFonction
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.3
+************************************************************************************************************/
+Fonction Trouve(a en Caractère, b en Caractère) en Numérique
+Variable i en Numérique
+Début
+i ← 1
+TantQue i < Len(a) - Len(b) et b <> Mid(a, i, Len(b))
+  i ← i + 1
+FinTantQue
+Si b <> Mid(a, i, Len(b)) Alors
+  Renvoyer 0
+Sinon
+ 
+FinSi
+Renvoyer i
+FinFonction
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.4
+************************************************************************************************************/
+Fonction PurgeSimple(a en Caractère, b en Caractère) en Caractère
+Variable Sortie en Caractère
+Variable i en Numérique
+Début
+Sortie ← ''
+Pour i ← 1 à Len(a)
+   Si Mid(a, i, 1) <> b Alors
+      Sortie ← Sortie & Mid(a, i, 1)
+   FinSi
+i suivant
+Renvoyer Sortie
+FinFonction
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.5
+************************************************************************************************************/
+Fonction PurgeMultiple(a en Caractère, b en Caractère) en Caractère
+Variable Sortie en Caractère
+Variable i en Numérique
+Début
+Sortie ← ''
+Pour i ← 1 à Len(a)
+   Si Trouve(b, Mid(a, i, 1)) = 0 Alors
+      Sortie ← Sortie & Mid(a, i, 1)
+   FinSi
+i suivant
+Renvoyer Sortie
+FinFonction
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.6
+************************************************************************************************************/
+Procédure TriTableau(T() en Numérique par Référence, n en Numérique par Valeur)
+Variables i, posmini, temp en Numérique
+Début
+Pour i ← 0 à n-2
+   posmini ← i
+   Pour j ← i + 1 à n-1
+      Si t(j) < t(posmini) Alors
+         posmini ← j
+      Finsi
+   j suivant
+   temp ← T(posmini)
+   T(posmini) ← T(i)
+   T(i) ← temp
+i suivant
+FinProcédure
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.7
+************************************************************************************************************/
+Fonction TableauCroissant(T() en Numérique, n en Numérique) en Booléen
+Variable i en Numérique
+Variable Flag en Booléen
+Début
+Flag ← Vrai
+i ← 0
+TantQue Flag et i < n-1
+   Flag ← T(i) < T(i+1)
+   i ← i+1
+FinTantQue
+Renvoyer Flag
+FinFonction
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.8
+************************************************************************************************************/
+Procédure Inversion(X en Numérique par Référence, Y en Numérique par Référence)
+Variable Temp en Numérique
+Début
+Temp ← X
+X ← Y
+Y ← Temp
+FinProcédure
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.9
+************************************************************************************************************/
+Procédure TriTableau(T() en Numérique par Référence, n en Numérique par Valeur, Croissant en Booléen par Valeur)
+Variables i, pos, temp en Numérique
+Début
+Pour i ← 0 à n-2
+   pos ← i
+   Pour j ← i + 1 à n-1
+      Si Croissant Alors
+         Si t(j) < t(pos) Alors
+            pos ← j
+         Finsi
+      Sinon
+         Si t(j) > t(pos) Alors
+            pos ← j
+         Finsi
+      Finsi
+   j suivant
+   temp ← T(pos)
+   T(pos) ← T(i)
+   T(i) ← temp
+i suivant
+FinProcédure
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo11.10
+************************************************************************************************************/
+Fonction TousDifférents:
+Fonction TousDifférents(T(8) en Num) en Booléen
+Pour i ← 0 à 7
+   Pour j ← i+1 à 8
+      Si T(i) = T(j) Alors
+         Renvoyer Faux
+      FinSi
+   j suivant
+i suivant
+Renvoyer Vrai FinFonction
+
+
+Procédure RemplitGrille:
+Procédure RemplitGrille(T(8, 8) en Num par Référence)
+Pour i ← 0 à 8
+   Pour j ← 0 à 8
+      T(i, j) ← Ent(Alea()*9)+1
+   j suivant
+i suivant FinProcédure
+
+
+Fonction VerifLignes:
+Fonction VerifLignes(Grille(8, 8) en Num) en Booléen
+Tableau Ligne(8) en Numérique
+Pour i ← 0 à 8
+   Pour j ← 0 à 8
+      Ligne(j) ← Grille(i, j)
+   j suivant
+   Si Non TousDifferents(Ligne()) Alors
+      Renvoyer Faux
+   FinSi
+i suivant
+Renvoyer Vrai
+FinFonction
+
+
+Fonction VerifColonnes:
+Fonction VerifColonnes(Grille(8, 8) en Num) en Booléen
+Tableau Colonne(8) en Num
+Pour j ← 0 à 8
+   Pour i ← 0 à 8
+      Colonne(i) ← Grille(i, j)
+   i suivant
+   Si Non TousDifferents(Colonne()) Alors
+      Renvoyer Faux
+   FinSi
+j suivant
+Renvoyer Vrai
+FinFonction
+
+
+Fonction VerifSousGrilles:
+Fonction VerifSousGrilles(Grille(8, 8) en Num) en Booléen
+Tableau SousGrille(8) en Num
+Pour ancrei ← 0 à 6 pas 3
+   Pour ancrej ← 0 à 6 pas 3
+      Pour decali ← 0 à 2
+         Pour decalj ← 0 à 2
+            SousGrille(decali*3 + decalj) ← Grille(ancrei + decali, ancrej + decalj)
+         decalj suivant
+      decali suivant
+      Si Non TousDifferents(SousGrille()) Alors
+         Renvoyer Faux
+      FinSi
+   ancrej suivant
+ancrei suivant
+Renvoyer Vrai
+FinFonction
+
+
+Procédure principale:
+Procédure principale()
+Tableau Sudok(8, 8) en Num
+Appeler RemplitGrille(Sudok())
+Tant Que Non VerifLignes(Sudok()) ou Non VerifColonnes(Sudok()) ou Non VerifSousGrilles(Sudok())
+   Appeler RemplitGrille(Sudok())
+FinTantQue>
+FinProcédure
+
+/***********************************************************************************************************/

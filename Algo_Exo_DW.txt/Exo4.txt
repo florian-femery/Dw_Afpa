@@ -1,0 +1,279 @@
+﻿/************************************************************************************************************
+                                                Exo4.1
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+TuTu EST_DU_TYPE NOMBRE
+ToTo EST_DU_TYPE NOMBRE
+TaTa EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+SI (TuTu > ToTo +4 ET TaTa <> "OK") ALORS
+DEBUT_SI
+TuTu PREND_LA_VALEUR TuTu+1
+FIN_SI
+SINON
+DEBUT_SINON
+TuTu PREND_LA_VALEUR TuTu-1
+FIN_SINON
+FIN_ALGORITHME
+
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo4.2
+************************************************************************************************************/
+Variables h, m en Numérique
+Début
+Ecrire "Entrez les heures, puis les minutes : "
+Lire h, m
+m ← m + 1
+Si m = 60 Alors
+  m ← 0
+  h ← h + 1
+FinSi
+Si h = 24 Alors
+  h ← 0
+FinSi
+Ecrire "Dans une minute il sera ", h, "heure(s) ", m, "minute(s)"
+Fin
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo4.3
+************************************************************************************************************/
+Variables h, m, s en Numérique
+Début
+Ecrire "Entrez les heures, puis les minutes, puis les secondes : "
+Lire h, m, s
+s ← s + 1
+Si s = 60 Alors
+  s ← 0
+  m ← m + 1
+FinSi
+Si m = 60 Alors
+  m ← 0
+  h ← h + 1
+FinSi
+Si h = 24 Alors
+  h ← 0
+FinSi
+Ecrire "Dans une seconde il sera ", h, "h", m, "m et ", s, "s"
+Fin
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo4.4
+************************************************************************************************************/
+Variables n, p en Numérique
+Début
+Ecrire "Nombre de photocopies : "
+Lire n
+Si n <= 10 Alors
+  p ← n * 0,1
+SinonSi n <= 30 Alors
+  p ← 10 * 0,1 + (n – 10) * 0,09
+Sinon
+  p ← 10 * 0,1 + 20 * 0,09 + (n – 30) * 0,08
+FinSi
+Ecrire "Le prix total est: ", p
+Fin
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo4.5
+************************************************************************************************************/
+Variable sex en Caractère
+Variable age en Numérique
+Variables C1, C2 en Booléen
+Début
+Ecrire "Entrez le sexe (M/F) : "
+Lire sex
+Ecrire "Entrez l’âge: "
+Lire age
+C1 ← sex = "M" ET age > 20
+C2 ← sex = "F" ET (age > 18 ET age < 35)
+Si C1 ou C2 Alors
+  Ecrire "Imposable"
+Sinon
+  Ecrire "Non Imposable"
+FinSi
+Fin
+/***********************************************************************************************************/
+
+
+
+
+/************************************************************************************************************
+                                                Exo4.6
+************************************************************************************************************/
+Variables A, B, C, D en Numérique
+Variables C1, C2, C3, C4 en Booléen
+Début
+Ecrire "Entrez les scores des quatre prétendants :"
+Lire A, B, C, D
+C1 ← A > 50
+C2 ← B > 50 ou C > 50 ou D > 50
+C3 ← A >= B et A >= C et A >= D
+C4 ← A >= 12,5
+Si C1 Alors
+  Ecrire “Elu au premier tour"
+Sinonsi C2 ou Non(C4) Alors
+  Ecrire “Battu, éliminé, sorti !!!”
+SinonSi C3 Alors
+  Ecrire "Ballotage favorable"
+Sinon
+  Ecrire "Ballotage défavorable"
+FinSi
+Fin
+/***********************************************************************************************************/
+
+
+
+
+/************************************************************************************************************
+                                                Exo4.7
+************************************************************************************************************/
+Variables age, perm, acc, assur en Numérique
+Variables C1, C2, C3 en Booléen
+Variable situ en Caractère
+Début
+Ecrire "Entrez l’âge: "
+Lire age
+Ecrire "Entrez le nombre d'années de permis: "
+Lire perm
+Ecrire "Entrez le nombre d'accidents: "
+Lire acc
+Ecrire "Entrez le nombre d'années d'assurance: "
+Lire assur
+C1 ← age >= 25
+C2 ← perm >= 2
+C3 ← assur > 5
+Si Non(C1) et Non(C2) Alors
+  Si acc = 0 Alors
+        situ ← "Rouge"
+  Sinon
+    situ ← "Refusé"
+  FinSi
+Sinonsi ((Non(C1) et C2) ou (C1 et Non(C2)) Alors
+  Si acc = 0 Alors
+        situ ← "Orange"
+  SinonSi acc = 1 Alors
+        situ ← "Rouge"
+  Sinon
+        situ ← "Refusé"
+  FinSi
+Sinon
+  Si acc = 0 Alors
+        situ ← "Vert"
+  SinonSi acc = 1 Alors
+        situ ← "Orange"
+  SinonSi acc = 2 Alors
+        situ ← "Rouge"
+  Sinon
+        situ ← "Refusé"
+  FinSi
+FinSi
+Si C3 Alors
+  Si situ = "Rouge" Alors
+        situ ← "Orange"
+  SinonSi situ = "Orange" Alors
+        situ ← "Vert"
+  SinonSi situ = "Vert" Alors
+        situ ← "Bleu"
+  FinSi
+FinSi
+Ecrire "Votre situation : ", situ
+Fin
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo4.8
+************************************************************************************************************/
+Variables J, M, A, JMax en Numérique
+Variables VJ, VM, B en Booleen
+Début
+Ecrire "Entrez le numéro du jour"
+Lire J
+Ecrire "Entrez le numéro du mois"
+Lire M
+Ecrire "Entrez l'année"
+Lire A
+Si VJ et VM alors
+  Ecrire "La date est valide"
+Sinon
+  Ecrire "La date n'est pas valide"
+FinSi
+B ← A dp 400 ou (non(A dp 100) et A dp 4)
+Jmax ← 0
+VM ← M >= 1 et M =< 12
+Si VM Alors
+  Si M = 2 et B Alors
+        JMax ← 29
+  SinonSi M = 2 Alors
+        JMax ← 28
+  SinonSi M = 4 ou M = 6 ou M = 9 ou M = 11 Alors
+        JMax ← 30
+  Sinon
+        JMax ← 31
+  FinSi
+  VJ ← J >= 1 et J =< Jmax
+FinSi
+Si M < 1 ou M > 12 Alors
+  Ecrire "Date Invalide"
+SinonSi M = 2 Alors
+  Si A dp 400 Alors
+        Si J < 1 ou J > 29 Alors
+          Ecrire "Date Invalide"
+        Sinon
+          Ecrire "Date Valide"
+        FinSi
+  SinonSi A dp 100 Alors
+        Si J < 1 ou J > 28 Alors
+          Ecrire "Date Invalide"
+        Sinon
+          Ecrire "Date Valide"
+        FinSi
+  SinonSi A dp 4 Alors
+        Si J < 1 ou J > 29Alors
+          Ecrire "Date Invalide"
+        Sinon
+          Ecrire "Date Valide"
+        FinSi
+  Sinon
+        Si J < 1 ou J > 28 Alors
+          Ecrire "Date Invalide"
+        Sinon
+          Ecrire "Date Valide"
+        FinSi
+  FinSi
+SinonSi M = 4 ou M = 6 ou M = 9 ou M = 11 Alors
+  Si J < 1 ou J > 30 Alors
+        Ecrire "Date Invalide"
+  Sinon
+        Ecrire "Date Valide"
+  FinSi
+Sinon
+  Si J < 1 ou J > 31 Alors
+        Ecrire "Date Invalide"
+  Sinon
+        Ecrire "Date Valide"
+  FinSi
+FinSi
+B ← (A dp 4 et Non(A dp 100)) ou A dp 400
+K1 ← (m=1 ou m=3 ou m=5 ou m=7 ou m=8 ou m=10 ou m=12) et (J>=1 et J=<31)
+K2 ← (m=4 ou m=6 ou m=9 ou m=11) et (J>=1 et J=<30)
+K3 ← m=2 et B et J>=1 et J=<29
+K4 ← m=2 et J>=1 et J=<28
+Si K1 ou K2 ou K3 ou K4 Alors
+  Ecrire "Date valide"
+Sinon
+  Ecrire "Date non valide"
+FinSi
+Fin
+/***********************************************************************************************************/

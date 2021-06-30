@@ -1,0 +1,179 @@
+﻿/************************************************************************************************************
+                                                Exo7.1
+************************************************************************************************************/
+Variables Nb, i en Entier
+Variable Flag en Booleen
+Tableau T() en Entier
+Debut
+Ecrire "Entrez le nombre de valeurs :"
+Lire Nb
+Redim T(Nb-1)
+Pour i ← 0 à Nb - 1
+  Ecrire "Entrez le nombre n° ", i + 1
+  Lire T(i)
+i Suivant
+Flag ← Vrai
+Pour i ← 1 à Nb - 1
+  Si T(i) <> T(i – 1) + 1 Alors
+    Flag ← Faux
+  FinSi
+i Suivant
+Si Flag Alors
+  Ecrire "Les nombres sont consécutifs"
+Sinon
+  Ecrire "Les nombres ne sont pas consécutifs"
+FinSi
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo7.2
+************************************************************************************************************/
+Pour i ← 0 à N - 2
+  posmaxi = i
+  Pour j ← i + 1 à N - 1
+    Si t(j) > t(posmaxi) alors
+      posmaxi ← j
+    Finsi
+  j suivant
+  temp ← t(posmaxi)
+  t(posmaxi) ← t(i)
+  t(i) ← temp
+i suivant
+Fin
+Tri à bulles :
+…
+Yapermut ← Vrai
+TantQue Yapermut
+  Yapermut ← Faux
+  Pour i ← 0 à N - 2
+    Si t(i) < t(i + 1) Alors
+      temp ← t(i)
+      t(i) ← t(i + 1)
+      t(i + 1) ← temp
+      Yapermut ← Vrai
+    Finsi
+  i suivant
+FinTantQue
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo7.3
+************************************************************************************************************/
+Pour i ← 0 à (N-1)/2
+  Temp ← T(i)
+  T(i) ← T(N-1-i)
+  T(N-1-i) ← Temp
+i suivant
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo7.4
+************************************************************************************************************/
+Ecrire "Rang de la valeur à supprimer ?"
+Lire S
+Pour i ← S à N-2
+  T(i) ← T(i+1)
+i suivant
+Redim T(N–1)
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo7.5
+************************************************************************************************************/
+Variables Sup, Inf, Comp en Entier
+Variables Fini en Booléen
+Début
+Ecrire "Entrez le mot à vérifier"
+Lire Mot
+Sup ← N - 1
+Inf ← 0
+Fini ← Faux
+TantQue Non Fini
+  Comp ← (Sup + Inf)/2
+    Si Mot < Dico(Comp) Alors
+    Sup ← Comp - 1
+  Sinon
+    Inf ← Comp + 1
+  FinSi
+  Fini ← Mot = Dico(Comp) ou Sup < Inf
+FinTantQue
+Si Mot = Dico(Comp) Alors
+  Ecrire "le mot existe"
+Sinon
+  Ecrire "Il n'existe pas"
+Finsi
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo7.6
+************************************************************************************************************/
+Variables Nb, i en Entier
+Variable Doublon en Booleen
+Tableau T() en Entier
+Debut
+Ecrire "Entrez le nombre de valeurs :"
+Lire Nb
+Redim T(Nb-1)
+Pour i ← 0 à Nb - 1
+  Ecrire "Entrez le nombre n° ", i + 1
+  Lire T(i)
+i Suivant
+Doublon ← Faux
+Pour i ← 1 à Nb - 1
+   Pour j ← i+1 à Nb - 1
+      Si T(i) = T(j) Alors
+         Doublon ← Vrai
+      FinSi
+   j Suivant
+i Suivant
+Si Doublon Alors
+  Ecrire "Il y a un ou plusieurs doublons"
+Sinon
+  Ecrire "Pas de doublons"
+FinSi
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo7.7
+************************************************************************************************************/
+Début
+(...)
+Afini ← faux
+Bfini ← faux
+ia ← 0
+ib ← 0
+ic ← -1
+TantQue Non(Afini) ou Non(Bfini)
+   ic ← ic + 1
+   Redim C(ic)
+   Si Afini ou A(ia)>B(ib) Alors
+      C(ic) ← B(ib)
+      ib ← ib + 1
+      Bfini ← ib > n
+   Sinon
+      C(ic) ← A(ia)
+      ia ← ia + 1
+      Afini ← ia > m
+   FinSi
+FinTantQue
+Fin
+
+/***********************************************************************************************************/

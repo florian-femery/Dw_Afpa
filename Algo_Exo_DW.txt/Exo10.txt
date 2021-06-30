@@ -1,0 +1,310 @@
+﻿/************************************************************************************************************
+                                                Exo10.1
+************************************************************************************************************/
+Variable Truc en Caractère
+Début
+Ouvrir "Exemple.txt" sur 5 en Lecture
+Tantque Non EOF(5)
+  LireFichier 5, Truc
+  Ecrire Truc
+FinTantQue
+Fermer 5
+Fin
+
+Cet algorithme écrit l'intégralité du fichier quot;Exemple.txt" à l'écran
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo10.2
+************************************************************************************************************/
+Variable Truc en Caractère
+Variable i en Entier
+Debut
+Ouvrir "Exemple.txt" sur 5 en Lecture
+Tantque Non EOF(5)
+  LireFichier 5, Truc
+  Pour i ← 1 à Len(Truc)
+    Si Mid(Truc, i, 1) = "/" Alors
+      Ecrire " "
+    Sinon
+      Ecrire Mid(Truc, i, 1)
+    FinSi
+  i Suivant
+FinTantQue
+Fermer 5
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo10.3
+************************************************************************************************************/
+Variables Nom * 20, Prénom * 17, Tel * 10, Mail * 20, Lig en Caractère
+Debut
+Ecrire "Entrez le nom : "
+Lire Nom
+Ecrire "Entrez le prénom : "
+Lire Prénom
+Ecrire "Entrez le téléphone : "
+Lire Tel
+Ecrire "Entrez le nom : "
+Lire Mail
+Lig ← Nom & Prénom & Tel & Mail
+Ouvrir "Adresse.txt" sur 1 pour Ajout
+EcrireFichier 1, Lig
+Fermer 1
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo10.4
+************************************************************************************************************/
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en Caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote, Nouveau en Bottin
+Variables i, j en Numérique
+Debut
+Ecrire "Entrez le nom : "
+Lire Nouveau.Nom
+Ecrire "Entrez le prénom : "
+Lire Nouveau.Prénom
+Ecrire "Entrez le téléphone : "
+Lire Nouveau.Tel
+Ecrire "Entrez le mail :
+Lire Nouveau.Mail
+Ouvrir "Adresse.txt" sur 1 pour Lecture
+i ← -1
+inséré ← Faux
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom > Nouveau.Nom et Non Inséré Alors
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+    i ← i + 1
+    Redim MesPotes(i)
+  FinSi
+  MesPotes(i) ← MonPote
+FinTantQue
+Fermer 1
+Si Non Inséré Alors
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+FinSi
+Ouvrir quot;Adresse.txt" sur 1 pour Ecriture
+Pour j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j suivant
+Fermer 1
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo10.5
+************************************************************************************************************/
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote en Bottin
+Variables Ancien, Nouveau en Caractère*20
+Variables i, j en Numérique
+Variable Trouvé en Booléen
+Debut
+Ecrire "Entrez le nom à modifier : "
+Lire Ancien
+Ecrire "Entrez le nouveau nom : "
+Lire Nouveau
+Ouvrir “Adresse.txt” sur 1 pour Lecture
+i ← -1
+Trouvé ← Faux
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom = Ancien.Nom Alors
+    Trouvé ← Vrai
+    MonPote.Nom ← Nouveau
+  FinSi
+  MesPotes(i) ← MonPote
+FinTantQue
+Fermer 1
+Ouvrir "Adresse.txt" sur 1 pour Ecriture
+Pour j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j Suivant
+Fermer 1
+Si Trouvé Alors
+  Ecrire "Modification effectuée"
+Sinon
+  Ecrire "Nom inconnu. Aucune modification effectuée"
+FinSi
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo10.6
+************************************************************************************************************/
+Structure Bottin Nom en Caractère * 20
+Prénom en Caractère * 15
+Tel en caractère * 10
+Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables Mini en Bottin
+Variables i, j en Numérique
+Debut
+Ouvrir "Adresse.txt" sur 1 pour Lecture
+i ← -1
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MesPotes(i)
+FinTantQue
+Fermer 1
+Pour j ← 0 à i - 1
+  Mini ← MesPotes(j)
+  posmini ← j
+  Pour k ← j + 1 à i
+    Si MesPotes(k).Nom < Mini.Nom Alors
+      mini ← MesPotes(k)
+      posmini ← k
+    Finsi
+  k suivant
+  MesPotes(posmini) ← MesPotes(j)
+  MesPotes(j) ← Mini
+j suivant
+Ouvrir "Adresse.txt" sur 1 pour Ecriture
+Pour j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j suivant
+Fermer 1
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo10.7
+************************************************************************************************************/
+Variable Lig en Caractère
+Début
+Ouvrir "Tutu.txt" sur 1 pour Ajout
+Ouvrir “Toto.txt” sur 2 pour Lecture
+Tantque Non EOF(2)
+  LireFichier 2, Lig
+  EcrireFichier 1, Lig
+FinTantQue
+Fermer 2
+Ouvrir “Tata.txt” sur 3 pour Lecture
+Tantque Non EOF(3)
+  LireFichier 3, Lig
+  EcrireFichier 1, Lig
+FinTantQue
+Fermer 3
+Fermer 1
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo10.8
+************************************************************************************************************/
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variable MonPote en Bottin
+Variables i, j en Numérique
+Debut
+Ouvrir "Adresse.txt" sur 1 pour Lecture
+i ← -1
+Tantque Non EOF(1)
+  LireFichier 1, MonPote
+  nb ← 0
+  Pour i ← 1 à Len(MonPote.Mail)
+    Si Mid(MonPote.Mail, i, 1) = "@" Alors
+      nb ← nb + 1
+    FinSi
+  i suivant
+  Si nb = 1 Alors
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← MonPote
+  FinSi
+FinTantQue
+Fermer 1
+Ouvrir "Adresse.txt" sur 1 pour Ecriture
+Pour j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j Suivant
+Fermer 1
+Fin
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo10.9
+************************************************************************************************************/
+Structure Vendeur
+  Nom en Caractère * 20
+  Montant en Numérique
+Fin Structure
+Tableau MesVendeurs() en Vendeur
+Variables NomPrec * 20, Lig, Nom en caractère
+Variables Somme, Vente en Numérique
+Debut
+Ouvrir "Ventes.txt” sur 1 pour Lecture
+i ← -1
+Somme ← 0
+NomPréc ← ""
+Tantque Non EOF(1)
+  LireFichier 1, Lig
+  Nom ← Mid(Lig, 1, 20)
+  Vente ← CNum(Mid(Lig, 21, 10)
+  Si Nom = NomPrec Alors
+    Somme ← Somme + Vente
+  Sinon
+    i ← i + 1
+    Redim MesVendeurs(i)
+    MesVendeurs(i).Nom ← NomPrec
+    MesVendeurs(i).Montant ← Somme
+    Somme ← 0
+    NomPrec ← Nom
+  FinSi
+FinTantQue
+i ← i + 1
+Redim MesVendeurs(i)
+MesVendeurs(i).Nom ← NomPrec
+MesVendeurs(i).Montant ← Somme
+Fermer 1
+Pour j ← 0 à i
+  Ecrire MesVendeurs(j)
+j suivant
+Fin
+
+/***********************************************************************************************************/

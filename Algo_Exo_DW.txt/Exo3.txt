@@ -1,0 +1,140 @@
+﻿/************************************************************************************************************
+                                                Exo3.1
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+nb EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+LIRE nb
+SI (nb >0) ALORS
+DEBUT_SI
+AFFICHER* "Ce nombre est positif"
+FIN_SI
+SINON
+DEBUT_SINON
+AFFICHER* "Ce nombre est négatif"
+FIN_SINON
+FIN_ALGORITHME
+
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo3.2
+************************************************************************************************************/
+Variables m, n en Entier
+Début
+Ecrire "Entrez deux nombres : "
+Lire m, n
+Si (m > 0 ET n > 0) OU (m < 0 ET n < 0) Alors
+  Ecrire "Leur produit est positif"
+Sinon
+  Ecrire "Leur produit est négatif"
+Finsi
+Fin
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo3.3
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+a EST_DU_TYPE CHAINE
+b EST_DU_TYPE CHAINE
+c EST_DU_TYPE CHAINE
+DEBUT_ALGORITHME
+AFFICHER "Entrez successivement trois noms :"
+LIRE a
+LIRE b
+LIRE c
+SI (a < b ET b < c) ALORS
+DEBUT_SI
+AFFICHER* "Ces noms sont classés alphabétiquement"
+FIN_SI
+SINON
+DEBUT_SINON
+AFFICHER* "Ces noms ne sont pas classés"
+FIN_SINON
+FIN_ALGORITHME
+
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo3.4
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+nb EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+LIRE nb
+SI (nb <0) ALORS
+DEBUT_SI
+AFFICHER* "Ce nombre est négatif"
+FIN_SI
+SINON
+DEBUT_SINON
+SI (nb ==0) ALORS
+DEBUT_SI
+AFFICHER* "Ce nombre est nul"
+FIN_SI
+SINON
+DEBUT_SINON
+AFFICHER* "Ce nombre est positif"
+FIN_SINON
+FIN_SINON
+FIN_ALGORITHME
+
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo3.5
+************************************************************************************************************/
+Variables m, n en Entier
+Début
+Ecrire "Entrez deux nombres : "
+Lire m, n
+Si m = 0 OU n = 0 Alors
+  Ecrire "Le produit est nul"
+SinonSi (m < 0 ET n < 0) OU (m > 0 ET n > 0) Alors
+  Ecrire "Le produit est positif"
+Sinon
+  Ecrire "Le produit est négatif"
+Finsi
+Fin
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo3.6
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+age EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+LIRE age
+SI (age ==6 OU age==7) ALORS
+DEBUT_SI
+AFFICHER* "Poussin"
+FIN_SI
+SI (age == 8 OU age == 9) ALORS
+DEBUT_SI
+AFFICHER "Pupille"
+FIN_SI
+SI (age == 10 OU age == 11) ALORS
+DEBUT_SI
+AFFICHER "Minime"
+FIN_SI
+SI (age>=12 ) ALORS
+DEBUT_SI
+AFFICHER "Cadet"
+FIN_SI
+FIN_ALGORITHME
+
+
+/***********************************************************************************************************/

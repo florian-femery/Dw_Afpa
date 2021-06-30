@@ -1,0 +1,172 @@
+﻿/************************************************************************************************************
+                                                Exo1.1
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 1
+  B PREND_LA_VALEUR A+3
+  A PREND_LA_VALEUR 3
+  AFFICHER* A
+  AFFICHER* B
+FIN_ALGORITHME
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo1.2
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+  C EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 5
+  B PREND_LA_VALEUR 3
+  C PREND_LA_VALEUR A+B
+  A PREND_LA_VALEUR 2
+  C PREND_LA_VALEUR B-A
+  AFFICHER* A
+  AFFICHER* B
+  AFFICHER C
+FIN_ALGORITHME
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo1.3
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 5
+  B PREND_LA_VALEUR A+4
+  A PREND_LA_VALEUR A+1
+  B PREND_LA_VALEUR A-4
+  AFFICHER* A
+  AFFICHER* B
+FIN_ALGORITHME
+
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo1.4
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+  C EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 3
+  B PREND_LA_VALEUR 10
+  C PREND_LA_VALEUR A+B
+  B PREND_LA_VALEUR A+B
+  A PREND_LA_VALEUR C
+  AFFICHER* A
+  AFFICHER* B
+  AFFICHER* C
+FIN_ALGORITHME
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo1.5
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 5
+  B PREND_LA_VALEUR 2
+  A PREND_LA_VALEUR B
+  B PREND_LA_VALEUR A
+  AFFICHER* A
+  AFFICHER* B
+FIN_ALGORITHME
+
+
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo1.6
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 5
+  B PREND_LA_VALEUR 2
+  A PREND_LA_VALEUR A+B
+  B PREND_LA_VALEUR A-B
+  A PREND_LA_VALEUR A-B
+  AFFICHER* A
+  AFFICHER* B
+FIN_ALGORITHME
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo1.7
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+  C EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 2
+  B PREND_LA_VALEUR 5
+  C PREND_LA_VALEUR 7
+  B PREND_LA_VALEUR C-B
+  C PREND_LA_VALEUR C-A
+  A PREND_LA_VALEUR B+C
+  AFFICHER* A
+  AFFICHER* B
+  AFFICHER* C
+FIN_ALGORITHME
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo1.8
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+  C EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 423
+  B PREND_LA_VALEUR 12
+  C PREND_LA_VALEUR A+B
+  AFFICHER* C
+FIN_ALGORITHME
+/***********************************************************************************************************/
+
+
+/************************************************************************************************************
+                                                Exo1.9
+************************************************************************************************************/
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+  C EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  A PREND_LA_VALEUR 423
+  B PREND_LA_VALEUR 12
+  C PREND_LA_VALEUR A&B
+  AFFICHER* C
+FIN_ALGORITHME
+/***********************************************************************************************************/
