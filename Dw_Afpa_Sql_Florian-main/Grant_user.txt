@@ -1,0 +1,7 @@
+GRANT INSERT, UPDATE, DELETE ON *.* TO 'marketing'@'%marketing';
+
+GRANT INSERT, UPDATE, DELETE ON `gescom`.* TO 'marketing'@'%marketing';
+
+GRANT DELETE, CREATE, REFERENCES (pro_cat_id) ON `gescom`.`products` TO 'marketing'@'%marketing';
+
+GRANT CREATE, REFERENCES (cat_name) ON `gescom`.`categories` TO 'marketing'@'%marketing';
