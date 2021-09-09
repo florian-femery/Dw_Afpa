@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<html>
+    <head>
+     <meta charset="utf-8">
+     <title>Page Contact</title>
+     <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <img src="img/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" width="100px">
+       <p id="top" class="header" >La qualité depuis 70 ans</p>
+
+       <ul>
+        <li class="header" >
+          <a href="index.html" title="Page suivante">Accueil:</a>
+        <a href="tableau.html" title="Page suivante">Tableau:</a>
+        <a href="contact.html" title="Page suivante">Formulaire:</a>
+      </li>          
+       </ul>
+
+      <img src="img/promotion.jpg" alt="Promotion Jarditou" title="Promo Jarditou">
+      <h2>Contact</h2>
+       <form action="index.html" method="POST" id="contact.html">
+        <h5>*Ces zones sont obligatoires</h5>
+
+       <fieldset>
+         <legend>Vos coordonnées</legend>
+        <label for="nom">Votre Nom*:</label><input type="text" name="nom" id="nom"><br>
+        <label for="prénom">Votre Prénom*:</label><input type="text" name="prénom" id="prénom"><br><br>
+        Sexe*: <input type="radio" name="sexe" value="Féminin">Féminin
+               <input type="radio" name="sexe" value="Masculin">Masculin<br>
+        <label for="date">Date de naissance*:</label><input type="date" name="ddn" id="date"><br>
+        <label for="cd">Code postal*</label><input type="text" name="cd" name="cd" id="cd"><br>
+        <label for="ville">Ville</label><input type="text" name="ville" id="ville"><br>
+        <label for="Adr">Address</label><input type="text" name="Adr" id="Adr"><br>
+        <label for="mail">Email*</label><input type="email" name="mail" id="mail">
+      </fieldset> 
+
+      <fieldset>
+        <legend>Votre demande</legend>
+        <label for="sujet">Sujet* :</label>
+          <select id="sujet">
+            <option value="" selected>Veuillez sélectionner un sujet</option>
+            <option value="" >Mes commandes</option>
+            <option value="" >Question sur un produit</option>
+            <option value="" >Réclamation</option>
+            <option value="" >Autres</option>
+          </select><br>
+         <label for="question">Votre question* :</label><textarea name="question" rows="10" cols="50"></textarea>
+      </fieldset><br>
+
+      <input type="checkbox" name="couleur" value="Bleu" required> *J'accepte le traitement informatique de ce formulaire<br><br>
+      <input type="submit" name="Envoyer">
+      <input  type="reset" value="Annuler">
+      </form>
+      <nav>
+        <ul>                     <!--Lien inutile car il ne mene a rien et on ma pas demander pour ces lien-->
+          <li class="header" >
+           <a href="" title="Page suivante">Mention légales:</a>
+           <a href="" title="Page suivante">Horaires:</a>
+           <a href="" title="Page suivante">Plan du site:</a>
+          </li>
+        </ul>
+       </nav>
+     </body>
+ </html>
