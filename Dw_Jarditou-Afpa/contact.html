@@ -1,66 +1,142 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <html>
-    <head>
-     <meta charset="utf-8">
-     <title>Page Contact</title>
-     <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-      <img src="img/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" width="100px">
-       <p id="top" class="header" >La qualité depuis 70 ans</p>
+  <head>
+    <meta charset="utf-8">
+    <title>Page Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scal=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-       <ul>
-        <li class="header" >
-          <a href="index.html" title="Page suivante">Accueil:</a>
-        <a href="tableau.html" title="Page suivante">Tableau:</a>
-        <a href="contact.html" title="Page suivante">Formulaire:</a>
-      </li>          
-       </ul>
+  </head>
 
-      <img src="img/promotion.jpg" alt="Promotion Jarditou" title="Promo Jarditou">
-      <h2>Contact</h2>
-       <form action="index.html" method="POST" id="contact.html">
-        <h5>*Ces zones sont obligatoires</h5>
+  <body>
+    <span><img src="img/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" width="100px"></span>
+    <span id="top" class="align-text-top">La qualité depuis 70 ans</span>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <a class="navbar-brand" href="index.html">Jarditou.com</a> 
+      <!-- Toggler/collapsibe Button-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="collapse navbar-toggler-icon" id="collapsibleNavbar"></span> 
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li>
 
-       <fieldset>
-         <legend>Vos coordonnées</legend>
-        <label for="nom">Votre Nom*:</label><input type="text" name="nom" id="nom"><br>
-        <label for="prénom">Votre Prénom*:</label><input type="text" name="prénom" id="prénom"><br><br>
-        Sexe*: <input type="radio" name="sexe" value="Féminin">Féminin
-               <input type="radio" name="sexe" value="Masculin">Masculin<br>
-        <label for="date">Date de naissance*:</label><input type="date" name="ddn" id="date"><br>
-        <label for="cd">Code postal*</label><input type="text" name="cd" name="cd" id="cd"><br>
-        <label for="ville">Ville</label><input type="text" name="ville" id="ville"><br>
-        <label for="Adr">Address</label><input type="text" name="Adr" id="Adr"><br>
-        <label for="mail">Email*</label><input type="email" name="mail" id="mail">
-      </fieldset> 
+            <li class="nav-item">
+              <a class="nav-link" href="tableau.html">Tableau</a>
+            </li>   
 
-      <fieldset>
-        <legend>Votre demande</legend>
-        <label for="sujet">Sujet* :</label>
-          <select id="sujet">
-            <option value="" selected>Veuillez sélectionner un sujet</option>
-            <option value="" >Mes commandes</option>
-            <option value="" >Question sur un produit</option>
-            <option value="" >Réclamation</option>
-            <option value="" >Autres</option>
-          </select><br>
-         <label for="question">Votre question* :</label><textarea name="question" rows="10" cols="50"></textarea>
-      </fieldset><br>
+            <li class="nav-item font-weight-bold">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 lientop">
+            <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
 
-      <input type="checkbox" name="couleur" value="Bleu" required> *J'accepte le traitement informatique de ce formulaire<br><br>
-      <input type="submit" name="Envoyer">
-      <input  type="reset" value="Annuler">
-      </form>
-      <nav>
-        <ul>                     <!--Lien inutile car il ne mene a rien et on ma pas demander pour ces lien-->
-          <li class="header" >
-           <a href="" title="Page suivante">Mention légales:</a>
-           <a href="" title="Page suivante">Horaires:</a>
-           <a href="" title="Page suivante">Plan du site:</a>
-          </li>
-        </ul>
-       </nav>
-     </body>
- </html>
+      </nav>
+
+        <img src="img/promotion.jpg" alt="Promotion Jarditou" title="Promo Jarditou" width="100%">
+          <form  method="POST" >
+            <small>*Ces zones sont obligatoires</small>
+
+              <fieldset>
+                <legend><h2>Vos coordonnées</h2></legend>
+                  <div class="form-group">
+                    <label for="nom">Votre Nom*:</label><input type="text" name="nom" id="nom" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="prénom">Votre Prénom*:</label><input type="text" name="prénom" id="prénom" class="form-control">
+                  </div> 
+
+                  <label class="form-check-label">Sexe:*</label><br>
+                  <div class="form-check form-check-inline">
+                    <input type="radio" name="sexe" value="Féminin" class="form-check-input">Féminin  
+                    <input type="radio" name="sexe" value="Masculin" class="form-check-input">Masculin 
+                    <input type="radio" name="sexe" value="Neutre" class="form-check-input">Neutre
+                  </div>
+
+                  <div class="form-group">    
+                    <label for="date">Date de naissance*:</label><input type="date" name="ddn" id="date" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cd">Code postal*</label><input type="text" name="cd" id="cd" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="ville">Ville</label><input type="text" name="ville" id="ville"class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Adr">Address</label><input type="text" name="Adr" id="Adr"><br>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="mail">Email*</label><input type="email" name="mail" id="mail"class="form-control">
+                  </div>
+              </fieldset> 
+
+              <fieldset>
+                <legend>Votre demande</legend>
+                <div class="form-group">
+                    <label for="sujet" >Sujet* :</label>
+                  <select id="sujet" class="form-control">
+                    <option value="" selected>Veuillez sélectionner un sujet</option>
+                    <option value="" >Mes commandes</option>
+                    <option value="" >Question sur un produit</option>
+                    <option value="" >Réclamation</option>
+                    <option value="" >Autres</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="question">Votre question* :</label><textarea name="question" rows="3" cols="50" class="form-control"></textarea>
+                </div>
+              </fieldset>
+
+                <div class="form-check form-check-inline">
+                  <input type="checkbox" name="couleur" value="Bleu" class="form-check-input" required> *J'accepte le traitement informatique de ce formulaire
+                </div><br>
+
+                  <input type="submit" name="Envoyer" class="btn btn-primary"><input type="reset" name="Annuler" value="Annuler" class="btn btn-primary">
+          </form>
+
+      <footer>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark bottom">
+            <!-- Toggler/collapsibe Button-->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="collapse navbar-collapse-icon" id="collapsibleNavbar"></span> 
+          </button>
+
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Mentions légales</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Horaires</a>
+              </li> 
+
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Plan du Site</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </footer>
+
+            <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+  </body>
+</html>

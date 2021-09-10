@@ -3,53 +3,44 @@
 ************************************************************************************************************************************************************************/
 p.header{
     display: inline;
-    padding: 250px;
+    
 }
 /***********************************************************************************************************************************************************************
                                                                 //--Links--//
 ************************************************************************************************************************************************************************/
-li.header{
-    border: 5px solid black;
-}
-ul{
-    padding-inline-start: initial;
-    padding-right: 900px;
-    background-color: rgb(0, 0, 0);
-}
-a.link{
-    color: rgb(255, 255, 255);
-}
-a.visited{
-    color: rgb(255, 255, 255);
-}
-a.hover{
+a:hover{
     color: red;
     background-color: white;
 }
+form.lientop{
+    float: inline-start;
+    
+}
 nav.bottom{
-    float: left;
+    padding-right: 500px;
+    float: initial;
 }
 /***********************************************************************************************************************************************************************/
 
 /***********************************************************************************************************************************************************************
                                                                 //--Body_(Accueil)_--//
 ************************************************************************************************************************************************************************/
-imp.promo_jarditou{
+img.promo_jarditou{
     float: left;
     display: block;
 }
 article.body_article{
     width: 825px;
     float: left;
-    display:inline;
+    display: inline;
 }
 section.body_accueil{
     position: relative;
     display: inline-flex;
-    border: 2px solid rgb(124, 122, 122);
-    background-color: rgb(177, 177, 177);
-    float: left;
-    padding-bottom: 475px ;
+    border: 2px solid rgb(170, 170, 1);
+    background-color: rgb(230, 230, 0);
+    float: right;
+    padding-bottom: 399px ;
     padding-right: 130px;
 }
 /***********************************************************************************************************************************************************************/
@@ -75,26 +66,36 @@ a.anuler:visited{
 /************************************************************************************************************************************************************************
                                                                 //--Media_Résponcive--//
 ************************************************************************************************************************************************************************/
- @media screen and (max-width: 768px) {
-    section.body_accueil{
-      display:none;
-    }
+@media screen and (max-width: 991px) {
     li{
         display: block;
         font-size: 75%;
-
     }
-    h1{ 
-		font-size : 15px;
-        font-style: italic; 
-        font-weight: bold;
-	} 
     article.body_article{
     max-width: 50;
-    font-size: 66%;
+    font-size: 50%;
     height: auto;
     }
-  }
+    section.body_accueil{
+        padding-bottom: 50px ;
+        padding-right: 870px;
+        padding-left: 30px;
+        text-align: center;
+        float: left;
+    }
+    p.body_accueil{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1110px) {
+    section.body_accueil{
+        padding-bottom: 0px ;
+        padding-right: 870px;
+        padding-left: 30px;
+        text-align: center;
+        width: 100%;
+    }
+}
 li.bottom{
    font-size: small; 
 }
@@ -103,7 +104,6 @@ img
      max-width: 100%;
      height: auto;
 }
-
 p.header{
     padding: 120px;
 }
