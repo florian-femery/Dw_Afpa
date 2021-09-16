@@ -47,66 +47,85 @@
 
               <fieldset>
                 <legend><h2>Vos coordonnées</h2></legend>
-                  <div class="form-group">
-                    <label for="nom">Votre Nom*:</label><input type="text" name="nom" id="nom" class="form-control">
-                  </div>
+                <div class="form-group">
+                  <label for="nom">Votre Nom*</label>
+                  <input type="text" name="votre_nom" id="nom" class="form-control">
+                  <p id="missName"></p>
+              </div>
 
-                  <div class="form-group">
-                    <label for="prénom">Votre Prénom*:</label><input type="text" name="prénom" id="prénom" class="form-control">
-                  </div> 
+              <div class="form-group">
+                <label for="fname">Votre Prénom*</label>
+                <input type="text" name="votre_prenom" id="fname" class="form-control">
+                <p id="missFname"></p>
+            </div>
 
-                  <label class="form-check-label">Sexe:*</label><br>
-                  <div class="form-check form-check-inline">
-                    <input type="radio" name="sexe" value="Féminin" class="form-check-input">Féminin  
-                    <input type="radio" name="sexe" value="Masculin" class="form-check-input">Masculin 
-                    <input type="radio" name="sexe" value="Neutre" class="form-check-input">Neutre
-                  </div>
+            <label class="from-check-label">Sexe*</label>                
+            <div class="form-check form-check-inline">
+                <input type="radio" name="votre_sexe" id="Fem" value="Féminin" class="form-check-input">Féminin
+                <input type="radio" name="votre_sexe" id="Mas" value="Masculin" class="form-check-input">Masculin
+            </div>
+                <p id="missGenre"></p>      
 
-                  <div class="form-group">    
-                    <label for="date">Date de naissance*:</label><input type="date" name="ddn" id="date" class="form-control">
-                  </div>
+                <div class="form-group">
+                  <label for="Bday">Date de Naissance*</label>
+                  <input type="date" name="votre_date" id="Bday" class="form-control">
+                  <p id="missDate"></p>
+              </div>
 
-                  <div class="form-group">
-                    <label for="cd">Code postal*</label><input type="text" name="cd" id="cd" class="form-control">
-                  </div>
+              <div class="form-group">
+                  <label for="cpostal">Code Postal*</label>
+                  <input type="text" name="votre_cp" id="cpostal" class="form-control">
+                  <p id="missCP"></p>
+              </div>
+              
+              <div class="form-group">
+                  <label for="city">Ville*</label>
+                  <input type="text" name="city" id="city" class="form-control">
+                  <p id="missCity"></p>
+              </div>
 
-                  <div class="form-group">
-                    <label for="ville">Ville</label><input type="text" name="ville" id="ville"class="form-control">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="Adr">Address</label><input type="text" name="Adr" id="Adr"><br>
-                  </div>
+              <div class="form-group">
+                <label for="adr">Address*</label>
+                <input type="text" name="adr" id="adr" class="form-control">
+                <p id="missAdr"></p>
+            </div>
                   
-                  <div class="form-group">
-                    <label for="mail">Email*</label><input type="email" name="mail" id="mail"class="form-control">
-                  </div>
-              </fieldset> 
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input type="text" name="email" id="email" class="form-control">
+              <p id="missMail"></p>
+          </div>
+      </fieldset>
 
-              <fieldset>
-                <legend>Votre demande</legend>
-                <div class="form-group">
-                    <label for="sujet" >Sujet* :</label>
-                  <select id="sujet" class="form-control">
-                    <option value="" selected>Veuillez sélectionner un sujet</option>
-                    <option value="" >Mes commandes</option>
-                    <option value="" >Question sur un produit</option>
-                    <option value="" >Réclamation</option>
-                    <option value="" >Autres</option>
-                  </select>
-                </div>
+      <fieldset>
+          <legend><h2>Votre Demande</h2></legend>
+          <div class="form-group">
+              <label for="suj" >Sujet* :</label>
+            <select id="suj" class="form-control">
+              <option value="1" selected>Veuillez sélectionner un sujet</option>
+              <option value="2" >Mes commandes</option>
+              <option value="3" >Question sur un produit</option>
+              <option value="4" >Réclamation</option>
+              <option value="5" >Autres</option>
+            </select>
+            <p id="missSuj"></p>
+          </div>
 
-                <div class="form-group">
-                  <label for="question">Votre question* :</label><textarea name="question" rows="3" cols="50" class="form-control"></textarea>
-                </div>
-              </fieldset>
+          <div class="form-group">
+              <label for="question">Votre Question* :</label>
+              <textarea name="question" id="question" rows="3" cols="50" class="form-control"></textarea>
+              <p id="missQuestion"></p>
+          </div>
+      </fieldset>
 
-                <div class="form-check form-check-inline">
-                  <input type="checkbox" name="couleur" value="Bleu" class="form-check-input" required> *J'accepte le traitement informatique de ce formulaire
-                </div><br>
-
-                  <input type="submit" name="Envoyer" class="btn btn-primary"><input type="reset" name="Annuler" value="Annuler" class="btn btn-primary">
-          </form>
+      <div class="form-check form-check-inline">
+          <input type="checkbox" name="accept" id="customCheck1" value="Bleu" class="form-check-input" required> *J'accepte le traitement informatique de ce formulaire
+          <p id="errAccept"></p>
+      </div><br>
+      <button type="submit" id="send" class="btn btn-primary" name="ok">Envoyer</button>
+      <button type="reset" id="cancel"  class="btn btn-primary" name="cancel" >Annuler</button>
+      
+  </form>
 
       <footer>
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark bottom">
@@ -133,6 +152,7 @@
         </nav>
       </footer>
 
+      <script src="Js/Eval_Formulaire-Javascript.js"></script>
             <!-- Optional JavaScript -->
           <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
